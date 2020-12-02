@@ -22,5 +22,6 @@ Route.group(() => {
 
   Route.get('base', 'BaseController.index').middleware('auth');
   Route.post('base', 'BaseController.create').middleware('auth');
+  Route.get('base/listar', 'BaseController.show').middleware('auth');
 })
   .prefix('api');
