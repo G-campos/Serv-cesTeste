@@ -18,13 +18,13 @@ export default {
         fill: {
           gradient: {
             shade: 'dark',
-            type: 'vertical',
+            type: '130deg',
             shadeIntensity: 0.5,
-            gradientToColors: ['#17ead9'],
+            gradientToColors: ['#E5BA38'],
             inverseColors: false,
             opacityFrom: 0.9,
             opacityTo: 0.7,
-            stops: [0, 100]
+            stops: [0, 150]
           }
         },
         dataLabels: {

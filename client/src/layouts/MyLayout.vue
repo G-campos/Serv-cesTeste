@@ -1,13 +1,13 @@
 <template>
   <q-layout view="hHh LpR lFf">
 
-    <q-header reveal elevated class="bg-primary text-white" height-hint="98">
+    <q-header reveal elevated class="text-white" height-hint="98" style="background: linear-gradient(to right, rgba(112, 54, 119, 1) 0%, rgba(241, 121, 27, 1) 100%);">
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="left = !left" />
 
         <q-toolbar-title>
           <q-avatar>
-            <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
+            <img src="../assets/logo_branco.svg">
           </q-avatar>
           Dashboard
         </q-toolbar-title>
@@ -22,7 +22,7 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="left" side="left" overlay bordered>
+    <q-drawer v-model="left" side="left" overlay bordered style="background: linear-gradient(to right, rgba(112, 54, 119, 1) 0%, rgba(241, 121, 27, 1) 100%);">
 
     </q-drawer>
 

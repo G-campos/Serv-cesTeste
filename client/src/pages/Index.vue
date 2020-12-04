@@ -1,5 +1,5 @@
 <template>
-  <q-page class="container">
+  <q-page class="container" style="background: linear-gradient(to right, rgba(112, 54, 119, 1) 0%, rgba(241, 121, 27, 1) 100%);">
     <div class="col-md-6 col-sm-12 col-xs-12">
        <div class="row q-col-gutter-md q-px-md q-pt-md justify-center">
       <div class="col-md-3" v-for="i in 4" :key="i">
@@ -108,13 +108,7 @@ export default {
   },
   methods: {
     getBaseDados () {
-      HTTPClient.get('/base').then(res => {
-        console.log(res.data)
-        this.baseDados = res.data
-      })
-    },
-    getConexao () {
-      HTTPClient.get('/').then(res => {
+      HTTPClient.get('/bases').then(res => {
         console.log(res.data)
         this.baseDados = res.data
       })

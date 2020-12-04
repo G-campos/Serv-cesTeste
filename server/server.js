@@ -27,11 +27,11 @@ app.use(cors())
 app.use(express.json())
 
 app.use(function(req, res, next) {
-    res.locals.pool = db;
+    res.locals.pool = db
     next()
 })
 
 app.use('/users', userRouter)
 app.use('/bases', baseRouter)
 
-app.listen(3005, ()=> console.log('API rodando em http://localhost:3005'))
+app.listen(3005, () => console.log('API rodando em http://localhost:3005'))

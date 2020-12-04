@@ -1,9 +1,12 @@
-const sqlite3 = require('sqlite3').verbose();
+const db = require ('knex') ({
+    client: 'sqlite3',
+    connection: {
+      filename: './services_teste.sqlite'
+    },
+    useNullAsDefault: true
+})
 
-// open database in memory
-const db = new sqlite3.Database('./database/services_teste.sqlite', (err) => {
-  if (err) {
-    return console.error(err.message);
+module.exports = function (db) {
+  app.set('db', db)
+  return app
   }
-  console.log('Conectado ao banco de dados em memoria');
-});
