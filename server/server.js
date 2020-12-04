@@ -15,7 +15,7 @@ const swaggerOptions = {
             contact: {
                 name: "Gabriel de Campos"
             },
-            servers: ["http://localhost:3005"]
+            servers: ["http://localhost:3005/"]
         }
     },
     apis: [".js", "controllers/*.js"]
@@ -34,4 +34,4 @@ app.use(function(req, res, next) {
 app.use('/users', userRouter)
 app.use('/bases', baseRouter)
 
-app.listen(3005, ()=> console.log('API rodando'))
+app.listen(3005, ()=> console.log('API rodando em http://localhost:3005'))

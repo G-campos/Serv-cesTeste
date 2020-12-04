@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-router.post('/cadastro', (req, res) => {
+router.post('/', (req, res) => {
     res.locals.pool.query(
         `INSERT INTO users (username) VALUES ('${req.body.email}');`, (erro, resultado, campos) => {
             if (erro) throw erro
@@ -10,7 +10,7 @@ router.post('/cadastro', (req, res) => {
     )
 })
 
-router.post('/login', (req, res) => {
+router.get('/', (req, res) => {
     res.locals.pool.query(`SELECT username, id FROM users;`, (erro, resultado, campos) => {
         if (erro) {
             throw erro

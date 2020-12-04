@@ -12,7 +12,13 @@
           Dashboard
         </q-toolbar-title>
 
-        <q-btn dense flat round icon="login" to="/login"/>
+        <div v-if="auth">
+          <q-btn dense flat icon="mdi-account-plus" to="/register" label="Cadastrar" class="q-pa-xs"/>
+          <q-btn dense flat icon="login" to="/login" label="Login" class="q-pa-xs"/>
+        </div>
+        <div v-else>
+          <q-btn dense flat round icon="" @click="logoff()" label="logoff" />
+        </div>
       </q-toolbar>
     </q-header>
 
@@ -32,7 +38,8 @@ export default {
   name: 'MyLayout',
   data () {
     return {
-      left: false
+      left: false,
+      auth: true
     }
   }
 }

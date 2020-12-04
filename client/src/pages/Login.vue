@@ -3,7 +3,7 @@
     <q-page-container>
       <q-page class="flex flex-center">
         <div class="q-gutter-md">
-          <q-form @submit="logar">
+          <q-form @submit="onSubmit">
             <q-input
               class="q-pb-md"
               v-model="email"
@@ -45,8 +45,7 @@
 </template>
 
 <script>
-import HTTPClient from '../boot/axios'
-import { mapState, mapMutations, mapActions } from 'vuex'
+import { HTTPClient } from '../boot/axios'
 
 export default {
   name: 'Login',
@@ -59,37 +58,6 @@ export default {
   },
   created () {
     console.log(HTTPClient)
-  },
-  computed: {
-    ...mapState('authentication', [
-      'registerEmail',
-      'registerPassword',
-      'loginError'
-    ])
-  },
-  methods: {
-    ...mapMutations('autentication', [
-      'setRegisterEmail',
-      'setRegisterPassword'
-    ]),
-    ...mapActions('authentication', ['login'])
-    // async logar (evt) {
-    //   evt.preventDefault()
-    //   if (this.email !== '' && this.password !== '') {
-    //     await HTTPClient.post('/auth/login', { email: this.email, password: this.password }).then(res => {
-    //       console.log(res.data)
-    //       const autenticado = res.data
-    //       return autenticado
-    //     })
-    //   } else {
-    //     this.$q.notify({
-    //       color: 'red-5',
-    //       textColor: 'white',
-    //       icon: 'warning',
-    //       message: 'Preencha todos os campos'
-    //     })
-    //   }
-    // }
   }
 }
 </script>

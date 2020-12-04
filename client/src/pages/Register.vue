@@ -57,15 +57,42 @@
             </div>
           </q-form>
         </div>
+
+        <div class="col-4 q-pa-md">
+          <q-card class="row justify-center col-6 my-card">
+            <q-card-section class="col-12 text-center">
+              <div class="text-subtitle1"> Cadastrar Cliente </div>
+            </q-card-section>
+
+            <q-separator inset />
+            <q-card-section class="col-12">
+              <div class="row justify-center">
+                <q-input
+                  outlined
+                  v-model="cadastro.cliente"
+                  class="col-10 q-mt-lg"
+                  label="Nome do Cliente"
+                />
+              </div>
+              <div class="row justify-end q-mt-xl q-mb-lg">
+                <q-btn
+                  class="q-mt-lg"
+                  color="primary"
+                  label="Cadastrar"
+                  @click="cadastraCliente()"
+                />
+              </div>
+            </q-card-section>
+          </q-card>
+        </div>
       </q-page>
     </q-page-container>
   </q-layout>
 </template>
 
 <script>
-// import { HTTPClient } from '../boot/axios'
-import { mapState, mapMutations } from 'vuex'
-
+import HTTPClient from 'boot/axios'
+import { Notify } from 'quasar'
 export default {
   name: 'Register',
   data () {
@@ -77,56 +104,17 @@ export default {
   },
   created () {
   },
-  computed: {
-    ...mapState('authentication', [
-      'registerEmail',
-      'registerPassword'
-    ])
-  },
   methods: {
-    ...mapMutations('autentication', [
-      'setRegisterEmail',
-      'setRegisterPassword'
-    ])
-    // async cadastrar (evt) {
-    //   evt.preventDefault()
-    //   if (this.email !== '' && this.password !== '' && this.confirmaPwd !== '') {
-    //     if (this.password === this.confirmaPwd) {
-    //       if (this.accept !== true) {
-    //         this.$q.notify({
-    //           color: 'red-5',
-    //           textColor: 'white',
-    //           icon: 'warning',
-    //           message: 'Você precisa aceitar os termos primeiro'
-    //         })
-    //       } else {
-    //         await HTTPClient.post('/auth/register', { email: this.email, password: this.password }).then(res => {
-    //           console.log(res.data)
-    //         })
-    //         this.$q.notify({
-    //           color: 'green-4',
-    //           textColor: 'white',
-    //           icon: 'cloud_done',
-    //           message: 'Cadastrado'
-    //         })
-    //       }
-    //     } else {
-    //       this.$q.notify({
-    //         color: 'red-5',
-    //         textColor: 'white',
-    //         icon: 'warning',
-    //         message: 'Os campos de Senha e Confirma senha devem ser iguais'
-    //       })
-    //     }
-    //   } else {
-    //     this.$q.notify({
-    //       color: 'red-5',
-    //       textColor: 'white',
-    //       icon: 'warning',
-    //       message: 'Preencha todos os campos'
-    //     })
-    //   }
-    // }
+    cadastraCliente () {
+      HTTPClient.post('/cadastro/cliente', { nome: this.cadastro.cliente }).then(res => {
+        Notify.create({
+          message: res.data,
+          position: 'top',
+          color: 'green'
+        })
+        this.getClientes()
+      })
+    }
   }
 }
 </script>

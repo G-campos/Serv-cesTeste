@@ -1,126 +1,105 @@
 <template>
-  <q-page class="flex flex-center">
-    <div class="col-4 q-pa-md">
-      <q-card class="row justify-center col-6 my-card">
-        <q-card-section class="col-12 text-center">
-          <div class="text-subtitle1"> Cadastrar Cliente </div>
-        </q-card-section>
-
-        <q-separator inset />
-        <q-card-section class="col-12">
-          <div class="row justify-center">
-            <q-input
-              outlined
-              v-model="cadastro.cliente"
-              class="col-10 q-mt-lg"
-              label="Nome do Cliente"
-            />
-          </div>
-          <div class="row justify-end q-mt-xl q-mb-lg">
-            <q-btn
-              class="q-mt-lg"
-              color="primary"
-              label="Cadastrar"
-              @click="cadastraCliente()"
-            />
-          </div>
-        </q-card-section>
-      </q-card>
+  <q-page class="container">
+    <div class="col-md-6 col-sm-12 col-xs-12">
+       <div class="row q-col-gutter-md q-px-md q-pt-md justify-center">
+      <div class="col-md-3" v-for="i in 4" :key="i">
+        <apex-line-small :bgColorCard="colors[i - 1]"></apex-line-small>
+      </div>
     </div>
-    <div class="col-4 q-pa-md">
-      <q-card class="row justify-center col-6 my-card">
-        <q-card-section class="col-12 text-center">
-          <div class="text-subtitle1"> Cadastrar Produto </div>
-        </q-card-section>
-
-        <q-separator inset />
-        <q-card-section class="col-12">
-          <div class="row justify-center">
-            <q-input
-              outlined
-              v-model="cadastro.produto"
-              class="col-10 q-my-xs"
-              label="Nome do Produto"
-            />
-            <q-input
-              outlined
-              v-model="cadastro.codigo"
-              class="col-10 q-my-xs"
-              type="number"
-              label="Código do Produto"
-            />
-          </div>
-          <div class="row justify-end q-my-lg">
-            <q-btn
-              label="Cadastrar"
-              @click="cadastraProduto()"
-              color="primary"
-            />
-          </div>
-        </q-card-section>
-      </q-card>
+    <div class="row q-col-gutter-md q-px-md q-py-md">
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <apex-column></apex-column>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <apex-donut></apex-donut>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <apex-line></apex-line>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <apex-multiple-radial-bars></apex-multiple-radial-bars>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <apex-heatmap></apex-heatmap>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <apex-radial-bar></apex-radial-bar>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <apex-bubble></apex-bubble>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <apex-radar></apex-radar>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <apex-polar-map></apex-polar-map>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <apex-candle-stick></apex-candle-stick>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <apex-treemap></apex-treemap>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <apex-line-column></apex-line-column>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <apex-line-scatter></apex-line-scatter>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <apex-area></apex-area>
+      </div>
     </div>
-    <div class="col-4 q-pa-md">
-      <q-card class="row justify-center col-6 my-card">
-        <q-card-section class="col-12 text-center">
-          <div class="text-subtitle1"> Comprar Produto </div>
-        </q-card-section>
-
-        <q-separator inset />
-        <q-card-section class="col-12">
-          <div class="row justify-center">
-            <q-select
-              outlined
-              class="col-10 q-my-xs"
-              label="Cliente"
-              :options="clientesCadastrados"
-              option-value="id"
-              option-label="nome"
-              v-model="clienteEscolhido"
-              :disable="clientesCadastrados.length === 0"
-            />
-            <q-select
-              outlined
-              class="col-10 q-my-xs"
-              label="Produto"
-              :options="baseDados"
-              option-value="codigo"
-              option-label="nome"
-              v-model="produtoEscolhido"
-              :disable="baseDados.length === 0"
-            />
-          </div>
-          <div class="row justify-end q-my-lg">
-            <q-btn
-              label="Comprar"
-              @click="comprar()"
-              color="primary"
-            />
-          </div>
-        </q-card-section>
-      </q-card>
     </div>
   </q-page>
 </template>
 
 <script>
-import { HTTPClient } from 'boot/axios'
-import { Notify } from 'quasar'
+import HTTPClient from 'boot/axios'
+import ApexColumn from 'components/ApexColumn'
+import ApexArea from 'components/ApexArea'
+import ApexDonut from 'components/ApexDonut'
+import ApexLine from 'components/ApexLine'
+import ApexHeatmap from 'components/ApexHeatmap'
+import ApexMultipleRadialBars from 'components/ApexMultipleRadialBars'
+import ApexRadialBar from 'components/ApexRadialBar'
+import ApexBubble from 'components/ApexBubble'
+import ApexRadar from 'components/ApexRadar'
+import ApexCandleStick from 'components/ApexCandleStick'
+import ApexLineSmall from 'components/ApexLineSmall'
+import ApexPolarMap from 'components/ApexPolarMap'
+import ApexLineColumn from 'components/ApexLineColumn'
+import ApexTreemap from 'components/ApexTreemap'
+import ApexLineScatter from 'components/ApexLineScatter'
 
 export default {
   name: 'PageIndex',
-  // created () {
-  //   console.log('Base: ' + HTTPClient)
-  // },
+  components: {
+    ApexColumn,
+    ApexArea,
+    ApexDonut,
+    ApexLine,
+    ApexMultipleRadialBars,
+    ApexHeatmap,
+    ApexRadialBar,
+    ApexBubble,
+    ApexRadar,
+    ApexLineSmall,
+    ApexPolarMap,
+    ApexCandleStick,
+    ApexLineColumn,
+    ApexTreemap,
+    ApexLineScatter
+  },
   data () {
     return {
-      clientesCadastrados: [],
       baseDados: [],
-      cadastro: {
-        cliente: '',
-        produto: '',
-        codigo: null
-      }
+      colors: [
+        'linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%)',
+        'linear-gradient( 135deg, #2AFADF 10%, #4C83FF 100%)',
+        'linear-gradient( 135deg, #FFD3A5 10%, #FD6585 100%)',
+        'linear-gradient( 135deg, #EE9AE5 10%, #5961F9 100%)'
+      ]
     }
   },
   mounted () {
@@ -128,12 +107,6 @@ export default {
     this.getConexao()
   },
   methods: {
-    // getClientes () {
-    //   HTTPClient.get('/clientes').then(res => {
-    //     // console.log(res)
-    //     this.clientesCadastrados = res.data
-    //   })
-    // },
     getBaseDados () {
       HTTPClient.get('/base').then(res => {
         console.log(res.data)
@@ -144,26 +117,6 @@ export default {
       HTTPClient.get('/').then(res => {
         console.log(res.data)
         this.baseDados = res.data
-      })
-    },
-    cadastraCliente () {
-      HTTPClient.post('/cadastro/cliente', { nome: this.cadastro.cliente }).then(res => {
-        Notify.create({
-          message: res.data,
-          position: 'top',
-          color: 'green'
-        })
-        this.getClientes()
-      })
-    },
-    cadastraProduto () {
-      HTTPClient.post('/cadastro/produto', { nome: this.cadastro.produto, codigo: this.cadastro.codigo }).then(res => {
-        Notify.create({
-          message: res.data,
-          position: 'top',
-          color: res.data === 'Produto Inserido' ? 'green' : 'red'
-        })
-        this.getProdutos()
       })
     }
   }

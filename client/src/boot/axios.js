@@ -4,7 +4,7 @@ import axios from 'axios'
 Vue.prototype.$axios = axios
 
 const HTTPClient = axios.create({
-  baseURL: 'http://localhost:3333/api'
+  baseURL: 'http://localhost:3005'
 })
 
 export {
