@@ -5,11 +5,11 @@
       <q-toolbar>
         <q-btn dense flat rounded icon="menu" @click="left = !left" />
 
-        <q-toolbar-title>
-          <q-avatar>
-            <img src="../assets/logo_branco.svg">
-          </q-avatar>
-          Dashboard
+        <q-toolbar-title @click="$router.push('/')">
+            <q-avatar>
+              <img src="../assets/logo_branco.svg">
+            </q-avatar>
+          DASHBOARD
         </q-toolbar-title>
 
         <div v-if="auth">
@@ -34,18 +34,6 @@
                 HOME
               </q-item-section>
             </q-item>
-            <q-expansion-item expand-separator icon="assignment" label="CADASTROS" default-closeed expand-icon-class="text-white">
-              <q-list padding>
-                <q-item clickable v-ripple>
-                  <q-item-section avatar>
-                    <q-icon name="add_to_photos" />
-                  </q-item-section>
-                  <q-item-section>
-                    Conteúdo
-                  </q-item-section>
-                </q-item>
-              </q-list>
-            </q-expansion-item>
           </q-list>
         </div>
       </q-list>

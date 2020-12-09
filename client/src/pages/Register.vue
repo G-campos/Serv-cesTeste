@@ -1,12 +1,12 @@
 <template>
   <q-layout view="hHh LpR lFf">
     <q-page-container>
-      <q-page class="flex flex-center">
+      <q-page class="flex flex-center" style="background: linear-gradient(to right, rgba(112, 54, 119, 1) 0%, rgba(241, 121, 27, 1) 100%);">
         <div class="q-gutter-md">
           <!-- form cadastro -->
-          <q-form @submit="cadastrar">
+          <q-form @submit="cadastrarUser">
             <q-input
-              v-model="registerEmail"
+              v-model="email"
               rounded
               outlined
               type="email"
@@ -14,7 +14,7 @@
             />
             <q-input
               class="q-pt-md q-pb-md"
-              v-model="registerPassword"
+              v-model="password"
               rounded
               outlined
               :type="isPwd ? 'password' : 'text'"
@@ -52,38 +52,11 @@
                 rounded
                 label="Entrar"
                 type="submit"
-                color="primary"
+                color="linear-gradient(to right, rgba(112, 54, 119, 1) 0%, rgba(241, 121, 27, 1) 100%)"
+                to="/"
               />
             </div>
           </q-form>
-        </div>
-
-        <div class="col-4 q-pa-md">
-          <q-card class="row justify-center col-6 my-card">
-            <q-card-section class="col-12 text-center">
-              <div class="text-subtitle1"> Cadastrar Cliente </div>
-            </q-card-section>
-
-            <q-separator inset />
-            <q-card-section class="col-12">
-              <div class="row justify-center">
-                <q-input
-                  outlined
-                  v-model="cadastro.cliente"
-                  class="col-10 q-mt-lg"
-                  label="Nome do Cliente"
-                />
-              </div>
-              <div class="row justify-end q-mt-xl q-mb-lg">
-                <q-btn
-                  class="q-mt-lg"
-                  color="primary"
-                  label="Cadastrar"
-                  @click="cadastraCliente()"
-                />
-              </div>
-            </q-card-section>
-          </q-card>
         </div>
       </q-page>
     </q-page-container>
@@ -97,6 +70,8 @@ export default {
   name: 'Register',
   data () {
     return {
+      email: '',
+      password: '',
       isPwd: true,
       accept: false,
       confirmaPwd: ''
@@ -105,16 +80,20 @@ export default {
   created () {
   },
   methods: {
-    cadastraCliente () {
-      HTTPClient.post('/cadastro/cliente', { nome: this.cadastro.cliente }).then(res => {
+    cadastraUser () {
+      HTTPClient.post('/auth/register', { nome: this.email, password: this.password }).then(res => {
         Notify.create({
           message: res.data,
           position: 'top',
           color: 'green'
         })
-        this.getClientes()
       })
     }
   }
 }
 </script>
+<style lang="sass" scoped>
+.my-custom-toggle
+  border: 1px solid #027be3
+
+</style>
