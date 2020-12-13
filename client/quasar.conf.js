@@ -21,7 +21,8 @@ module.exports = function (/* ctx */) {
     boot: [
       'i18n',
       'axios',
-      'apex'
+      'constantes',
+      'geralService'
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
@@ -76,11 +77,6 @@ module.exports = function (/* ctx */) {
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
     devServer: {
-      proxy: {
-        '/api': {
-          target: 'http://localhost:3333',
-        }
-      },
       https: false,
       port: 8080,
       open: true // opens browser window automatically
@@ -104,11 +100,18 @@ module.exports = function (/* ctx */) {
       // you can manually specify Quasar components/directives to be available everywhere:
       //
       // components: [],
-      // directives: [],
+      directives: [
+        'Ripple', 'ClosePopup'
+      ],
 
       // Quasar plugins
       plugins: [
-        'Notify'
+        'Notify',
+        'Loading',
+        'AppFullscreen',
+        'Dialog',
+        'AddressbarColor',
+        'Meta'
       ]
     },
 

@@ -1,0 +1,10 @@
+{
+  "id": "",
+  "nome": "Kontrol Bits Dashboard",
+  "sigla": "KBD",
+  "production": false,
+  "logo": "",
+  "BASE_S3": "",
+  "BASE_REST": "http://localhost:3000/",
+  "BASE_REST_old": ""
+}

@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "```bash npm install ```",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "knex": "^0.21.12",
+    "mysql2": "^2.2.5",
+    "nodejslogger": "^1.2.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}

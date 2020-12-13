@@ -1,118 +1,80 @@
 <template>
-  <q-page class="container" style="background: linear-gradient(to right, rgba(112, 54, 119, 1) 0%, rgba(241, 121, 27, 1) 100%);">
-    <div class="col-md-6 col-sm-12 col-xs-12">
-       <div class="row q-col-gutter-md q-px-md q-pt-md justify-center">
-      <div class="col-md-3" v-for="i in 4" :key="i">
-        <apex-line-small :bgColorCard="colors[i - 1]"></apex-line-small>
-      </div>
-    </div>
-    <div class="row q-col-gutter-md q-px-md q-py-md">
-      <div class="col-md-6 col-sm-12 col-xs-12">
-        <apex-column></apex-column>
-      </div>
-      <div class="col-md-6 col-sm-12 col-xs-12">
-        <apex-donut></apex-donut>
-      </div>
-      <div class="col-md-6 col-sm-12 col-xs-12">
-        <apex-line></apex-line>
-      </div>
-      <div class="col-md-6 col-sm-12 col-xs-12">
-        <apex-multiple-radial-bars></apex-multiple-radial-bars>
-      </div>
-      <div class="col-md-6 col-sm-12 col-xs-12">
-        <apex-heatmap></apex-heatmap>
-      </div>
-      <div class="col-md-6 col-sm-12 col-xs-12">
-        <apex-radial-bar></apex-radial-bar>
-      </div>
-      <div class="col-md-6 col-sm-12 col-xs-12">
-        <apex-bubble></apex-bubble>
-      </div>
-      <div class="col-md-6 col-sm-12 col-xs-12">
-        <apex-radar></apex-radar>
-      </div>
-      <div class="col-md-6 col-sm-12 col-xs-12">
-        <apex-polar-map></apex-polar-map>
-      </div>
-      <div class="col-md-6 col-sm-12 col-xs-12">
-        <apex-candle-stick></apex-candle-stick>
-      </div>
-      <div class="col-md-6 col-sm-12 col-xs-12">
-        <apex-treemap></apex-treemap>
-      </div>
-      <div class="col-md-6 col-sm-12 col-xs-12">
-        <apex-line-column></apex-line-column>
-      </div>
-      <div class="col-md-6 col-sm-12 col-xs-12">
-        <apex-line-scatter></apex-line-scatter>
-      </div>
-      <div class="col-md-6 col-sm-12 col-xs-12">
-        <apex-area></apex-area>
-      </div>
-    </div>
+  <q-page class="grad">
+    <div class="q-pa-md row items-start q-gutter-md">
+    <Chart />
+    <q-card class="my-card transparent">
+      <q-card-section>
+        <p> </p>
+      </q-card-section>
+    </q-card>
     </div>
   </q-page>
 </template>
 
 <script>
-import HTTPClient from 'boot/axios'
-import ApexColumn from 'components/ApexColumn'
-import ApexArea from 'components/ApexArea'
-import ApexDonut from 'components/ApexDonut'
-import ApexLine from 'components/ApexLine'
-import ApexHeatmap from 'components/ApexHeatmap'
-import ApexMultipleRadialBars from 'components/ApexMultipleRadialBars'
-import ApexRadialBar from 'components/ApexRadialBar'
-import ApexBubble from 'components/ApexBubble'
-import ApexRadar from 'components/ApexRadar'
-import ApexCandleStick from 'components/ApexCandleStick'
-import ApexLineSmall from 'components/ApexLineSmall'
-import ApexPolarMap from 'components/ApexPolarMap'
-import ApexLineColumn from 'components/ApexLineColumn'
-import ApexTreemap from 'components/ApexTreemap'
-import ApexLineScatter from 'components/ApexLineScatter'
-
+import Chart from 'components/Chart.vue'
 export default {
   name: 'PageIndex',
   components: {
-    ApexColumn,
-    ApexArea,
-    ApexDonut,
-    ApexLine,
-    ApexMultipleRadialBars,
-    ApexHeatmap,
-    ApexRadialBar,
-    ApexBubble,
-    ApexRadar,
-    ApexLineSmall,
-    ApexPolarMap,
-    ApexCandleStick,
-    ApexLineColumn,
-    ApexTreemap,
-    ApexLineScatter
+    Chart
   },
   data () {
     return {
-      baseDados: [],
-      colors: [
-        'linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%)',
-        'linear-gradient( 135deg, #2AFADF 10%, #4C83FF 100%)',
-        'linear-gradient( 135deg, #FFD3A5 10%, #FD6585 100%)',
-        'linear-gradient( 135deg, #EE9AE5 10%, #5961F9 100%)'
-      ]
+      dados: {
+        periodo: {
+          dataInicio: '01/04/2019',
+          dataFim: ''
+        },
+        temp: []
+      },
+      tableData: [],
+      tableDataAll: []
     }
   },
+  created () {
+  },
   mounted () {
-    this.getBaseDados()
-    this.getConexao()
+    this.getLista()
+    // this.getListaToda()
   },
   methods: {
-    getBaseDados () {
-      HTTPClient.get('/bases').then(res => {
-        console.log(res.data)
-        this.baseDados = res.data
-      })
+    async getLista () {
+      // console.dir(this.dados)
+      if (this.dados.periodo.dataFim === '') {
+        this.dados.periodo.dataFim = this.dados.periodo.dataInicio
+      }
+      const ret = await this.$geralService.comunicaAsync('dados', 'post', this.dados, 'Consulta por periodo', true)
+      console.log('Retorno : ')
+      // console.log(ret)
+      if (ret !== {}) {
+        this.dados.temp = ret
+        console.log(this.dados.temp)
+      } else {
+        this.dados.temp = []
+      }
+    },
+    async getListaToda () {
+      const ret = await this.$geralService.comunicaAsync('dados/all', 'get', this.dados.periodo.dataInicio, 'Consulta toda a base', true)
+      if (ret !== {}) {
+        setTimeout(this.dados.temp = ret, 2000)
+      } else {
+        this.dados.temp = []
+      }
     }
   }
 }
 </script>
+<style lang="scss" scope>
+.grad{
+  background: linear-gradient(to right, #2F495E 20%, #333333 100%);
+  background-color: #e2e8f0;
+  color: #00ffd5;
+}
+.grad-invertido{
+  background: linear-gradient(to left,#333333 0%,  #2F495E 50%);
+}
+.my-card{
+  width: 100%;
+  max-width: 250px;
+}
+</style>

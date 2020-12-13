@@ -1,12 +1,17 @@
-import Vue from 'vue'
 import axios from 'axios'
 
-Vue.prototype.$axios = axios
+// Vue.prototype.$axios = axios
 
-const HTTPClient = axios.create({
-  baseURL: 'http://localhost:3005'
-})
+// export default async ({ Vue }) => {
+//   await Vue.prototype.$axios.get('statics/config.json').then(async ret => {
+//     Vue.prototype.$configuracoes = ret.data
+//   })
+// }
 
-export {
-  HTTPClient
+export default async ({ Vue, store }) => {
+  Vue.prototype.$axios = axios
+
+  await Vue.prototype.$axios.get('statics/config.json').then(async ret => {
+    Vue.prototype.$configuracoes = ret.data
+  })
 }
