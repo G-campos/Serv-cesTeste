@@ -59,13 +59,13 @@
       <!-- terceira linha -->
       <div class="col-12 row q-ga-sm justify-around">
         <div class="col-11 col-md-5 col-sm-11 transparent my-card">
-          <chart-coluna />
+          <chart-coluna :data="dados.coluna"/>
         </div>
         <div class="col-11 col-md-5 col-sm-10 transparent my-card">
-          <chart-coluna-simples />
+          <chart-coluna-simples :data="dados.coluna"/>
         </div>
         <div class="col-11 col-md-5 col-sm-10 transparent my-card">
-          <chart-angular-gauge />
+          <chart-angular-gauge :data="dados.gauge"/>
         </div>
       </div>
     </div>
@@ -89,12 +89,15 @@ export default {
     return {
       dados: {
         periodo: {
-          dataInicio: '',
+          dataInicio: '01/04/2019',
           dataFim: ''
         },
         temp: [],
         horas: null,
-        valores: null
+        valores: null,
+        coluna: {
+          estados: []
+        }
       },
       tableData: [],
       tableDataAll: [],
@@ -152,11 +155,23 @@ export default {
     },
     calculo (entrada) {
       for (const item of entrada) {
-        console.log(item)
-        this.dados.horas += item.HORA
-        this.dados.valores += item.VALOR
+        // console.log(item)
+        // this.dados.valores = this.dados.valores + item.VALOR
+        this.dados.horas = this.dados.horas + item.HORA
+
+        for (const estado of item.ESTADO) {
+          for (const estados of this.dados.coluna.estados) {
+            if (estados !== estado) {
+              this.dados.coluna.estados.push(estado)
+              console.log(this.dados.conula.estados)
+            }
+          }
+        }
       }
     }
+    // getDinheiro (valor) {
+    //   var money =
+    // }
   }
 }
 </script>
