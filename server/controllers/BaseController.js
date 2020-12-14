@@ -46,10 +46,10 @@ class BaseController {
         // console.log(req);
         logger.info("Entrada como : " + req.body.periodo );
         
-        if (periodo.dataInicio !== '' || periodo.dataInicio !== undefined){
+        if (periodo.dataInicio !== '' || periodo.dataInicio !== {} || periodo.dataInicio !== undefined){
             logger.info("Request Listando dados por :");
 
-            if (periodo.dataFim !== '' || periodo.dataFim !== undefined){
+            if (periodo.dataFim !== '' || periodo.dataFim !== {} || periodo.dataFim !== undefined){
                 logger.info("Periodo : " + periodo.dataInicio + " - " + periodo.dataFim);
 
                 await database("tbl_base").whereBetween('DATA', [periodo.dataInicio, periodo.dataFim])

@@ -3,12 +3,6 @@
 // leave the export, even if you don't use it
 export default ({ Vue }) => {
   const constantes = {
-    ROTAS_CONTROLADAS: [
-      { funcao: 6, rota: 'pessoas' }
-    ],
-    FUNCOES_SISTEMA: [
-      { id: 1, descricao: 'Acesso ao Sistema', variavel: 'geralAcesso' }
-    ],
     ESTADOS: [
       {
         id: 1,
@@ -222,22 +216,6 @@ export default ({ Vue }) => {
       { value: 'Número', label: 'Número' },
       { value: 'Tempo', label: 'Tempo' },
       { value: 'Lista', label: 'Lista' }
-    ],
-    TIPO_LIGACAO: [
-      { id: 1, descricao: 'Atleta' },
-      { id: 2, descricao: 'Equipe Técnica' },
-      { id: 3, descricao: 'Administração' },
-      { id: 4, descricao: 'Diretoria' }
-    ],
-    TIPO_PESSOA: [
-      {
-        id: 1,
-        tipo: 'Atleta'
-      },
-      {
-        id: 2,
-        tipo: 'Administrador'
-      }
     ],
     ABRANGENCIA: ['Municipal', 'Estadual', 'Regional', 'Nacional', 'Internacional'],
     PAISES: [

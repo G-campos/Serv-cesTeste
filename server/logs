@@ -1,91 +1,89 @@
-[20201213,14:43:26] INFO: Start Server
-[20201213,14:44:05] INFO: Entrada como : [object Object]
-[20201213,14:44:05] INFO: Request Listando dados por :
-[20201213,14:44:05] INFO: Periodo : 01/04/2019 - 01/04/2019
-[20201213,14:44:05] INFO: Request na raiz
-[20201213,14:44:23] INFO: Entrada como : [object Object]
-[20201213,14:44:23] INFO: Request Listando dados por :
-[20201213,14:44:23] INFO: Periodo : 01/04/2019 - 01/04/2019
-[20201213,14:44:24] INFO: Request na raiz
-[20201213,14:46:10] INFO: Entrada como : [object Object]
-[20201213,14:46:10] INFO: Request Listando dados por :
-[20201213,14:46:10] INFO: Periodo : 01/04/2019 - 01/04/2019
-[20201213,14:49:03] INFO: Entrada como : [object Object]
-[20201213,14:49:03] INFO: Request Listando dados por :
-[20201213,14:49:03] INFO: Periodo : 01/04/2019 - 01/04/2019
-[20201213,14:49:03] INFO: Request na raiz
-[20201213,14:50:38] INFO: Entrada como : [object Object]
-[20201213,14:50:38] INFO: Request Listando dados por :
-[20201213,14:50:38] INFO: Periodo : 01/04/2019 - 01/04/2019
-[20201213,14:51:47] INFO: Entrada como : [object Object]
-[20201213,14:51:47] INFO: Request Listando dados por :
-[20201213,14:51:47] INFO: Periodo : 01/04/2019 - 01/04/2019
-[20201213,14:51:47] INFO: Request na raiz
-[20201213,14:52:16] INFO: Entrada como : [object Object]
-[20201213,14:52:16] INFO: Request Listando dados por :
-[20201213,14:52:16] INFO: Periodo : 01/04/2019 - 01/04/2019
-[20201213,14:52:20] INFO: Entrada como : [object Object]
-[20201213,14:52:20] INFO: Request Listando dados por :
-[20201213,14:52:20] INFO: Periodo : 01/04/2019 - 01/04/2019
-[20201213,14:52:20] INFO: Request na raiz
-[20201213,14:52:47] INFO: Entrada como : [object Object]
-[20201213,14:52:47] INFO: Request Listando dados por :
-[20201213,14:52:47] INFO: Periodo : 01/04/2019 - 01/04/2019
-[20201213,14:52:54] INFO: Entrada como : [object Object]
-[20201213,14:52:54] INFO: Request Listando dados por :
-[20201213,14:52:54] INFO: Periodo : 01/04/2019 - 01/04/2019
-[20201213,14:52:54] INFO: Request na raiz
-[20201213,14:53:05] INFO: Entrada como : [object Object]
-[20201213,14:53:05] INFO: Request Listando dados por :
-[20201213,14:53:05] INFO: Periodo : 01/04/2019 - 01/04/2019
-[20201213,14:53:14] INFO: Entrada como : [object Object]
-[20201213,14:53:14] INFO: Request Listando dados por :
-[20201213,14:53:14] INFO: Periodo : 01/04/2019 - 01/04/2019
-[20201213,14:53:15] INFO: Request na raiz
-[20201213,14:54:03] INFO: Entrada como : [object Object]
-[20201213,14:54:03] INFO: Request Listando dados por :
-[20201213,14:54:03] INFO: Periodo : 01/04/2019 - 01/04/2019
-[20201213,14:54:03] INFO: Request na raiz
-[20201213,14:54:30] INFO: Entrada como : [object Object]
-[20201213,14:54:30] INFO: Request Listando dados por :
-[20201213,14:54:30] INFO: Periodo : 01/04/2019 - 01/04/2019
-[20201213,14:54:59] INFO: Entrada como : [object Object]
-[20201213,14:54:59] INFO: Request Listando dados por :
-[20201213,14:54:59] INFO: Periodo : 01/04/2019 - 01/04/2019
-[20201213,14:54:59] INFO: Request na raiz
-[20201213,14:57:06] INFO: Entrada como : [object Object]
-[20201213,14:57:06] INFO: Request Listando dados por :
-[20201213,14:57:06] INFO: Periodo : 01/04/2019 - 01/04/2019
-[20201213,14:57:06] INFO: Request na raiz
-[20201213,16:37:49] INFO: Entrada como : [object Object]
-[20201213,16:37:49] INFO: Request Listando dados por :
-[20201213,16:37:49] INFO: Periodo : 01/04/2019 - 01/04/2019
-[20201213,16:38:02] INFO: Entrada como : [object Object]
-[20201213,16:38:02] INFO: Request Listando dados por :
-[20201213,16:38:02] INFO: Periodo : 01/04/2019 - 01/04/2019
-[20201213,16:38:02] INFO: Request na raiz
-[20201213,16:40:03] INFO: Entrada como : [object Object]
-[20201213,16:40:03] INFO: Request Listando dados por :
-[20201213,16:40:03] INFO: Periodo : 01/04/2019 - 01/04/2019
-[20201213,16:40:11] INFO: Entrada como : [object Object]
-[20201213,16:40:11] INFO: Request Listando dados por :
-[20201213,16:40:11] INFO: Periodo : 01/04/2019 - 01/04/2019
-[20201213,16:40:11] INFO: Request na raiz
-[20201213,16:53:28] INFO: Entrada como : [object Object]
-[20201213,16:53:28] INFO: Request Listando dados por :
-[20201213,16:53:28] INFO: Periodo : 01/04/2019 - 01/04/2019
-[20201213,16:53:28] INFO: Request na raiz
-[20201213,16:53:41] INFO: Entrada como : [object Object]
-[20201213,16:53:41] INFO: Request Listando dados por :
-[20201213,16:53:41] INFO: Periodo : 01/04/2019 - 01/04/2019
-[20201213,16:53:41] INFO: Request na raiz
-[20201213,16:54:54] INFO: Entrada como : [object Object]
-[20201213,16:54:54] INFO: Request Listando dados por :
-[20201213,16:54:54] INFO: Periodo : 01/04/2019 - 01/04/2019
-[20201213,16:55:02] INFO: Entrada como : [object Object]
-[20201213,16:55:02] INFO: Request Listando dados por :
-[20201213,16:55:02] INFO: Periodo : 01/04/2019 - 01/04/2019
-[20201213,16:55:02] INFO: Request na raiz
-[20201213,17:00:48] INFO: Entrada como : [object Object]
-[20201213,17:00:48] INFO: Request Listando dados por :
-[20201213,17:00:48] INFO: Periodo : 01/04/2019 - 01/04/2019
+[20201214,13:51:57] INFO: Start Server
+[20201214,13:56:28] INFO: Request na raiz
+[20201214,13:56:57] INFO: Entrada como : [object Object]
+[20201214,13:56:57] INFO: Request Listando dados por :
+[20201214,13:56:57] INFO: Periodo : 01/04/2019 - 02/04/2019
+[20201214,13:57:31] INFO: Entrada como : [object Object]
+[20201214,13:57:31] INFO: Request Listando dados por :
+[20201214,13:57:31] INFO: Periodo : 01/04/2019 - 01/04/2019
+[20201214,13:58:52] INFO: Entrada como : [object Object]
+[20201214,13:58:52] INFO: Request Listando dados por :
+[20201214,13:58:52] INFO: Periodo : 01/04/2019 - 03/04/2019
+[20201214,14:00:21] INFO: Entrada como : [object Object]
+[20201214,14:00:21] INFO: Request Listando dados por :
+[20201214,14:00:21] INFO: Periodo : 01/04/2019 - 02/04/2019
+[20201214,14:01:39] INFO: Entrada como : [object Object]
+[20201214,14:01:39] INFO: Request Listando dados por :
+[20201214,14:01:39] INFO: Periodo : 01/04/2019 - 01/04/2019
+[20201214,14:02:26] INFO: Entrada como : [object Object]
+[20201214,14:02:26] INFO: Request Listando dados por :
+[20201214,14:02:26] INFO: Periodo : 01/04/2019 - 01/04/2019
+[20201214,14:03:49] INFO: Request na raiz
+[20201214,14:14:42] INFO: Entrada como : [object Object]
+[20201214,14:14:42] INFO: Request Listando dados por :
+[20201214,14:14:42] INFO: Periodo : 01/04/2019 - 01/04/2019
+[20201214,14:16:21] INFO: Entrada como : [object Object]
+[20201214,14:16:21] INFO: Request Listando dados por :
+[20201214,14:16:21] INFO: Periodo : 01/04/2019 - 01/04/2019
+[20201214,14:16:54] INFO: Entrada como : [object Object]
+[20201214,14:16:54] INFO: Request Listando dados por :
+[20201214,14:16:54] INFO: Periodo : 01/04/2019 - 01/04/2019
+[20201214,14:22:19] INFO: Entrada como : [object Object]
+[20201214,14:22:19] INFO: Request Listando dados por :
+[20201214,14:22:19] INFO: Periodo : 01/04/2019 - 01/04/2019
+[20201214,14:24:51] INFO: Entrada como : [object Object]
+[20201214,14:24:51] INFO: Request Listando dados por :
+[20201214,14:24:51] INFO: Periodo : 01/04/2019 - 01/04/2019
+[20201214,14:25:08] INFO: Entrada como : [object Object]
+[20201214,14:25:08] INFO: Request Listando dados por :
+[20201214,14:25:08] INFO: Periodo : 01/04/2019 - 01/04/2019
+[20201214,14:28:40] INFO: Entrada como : [object Object]
+[20201214,14:28:40] INFO: Request Listando dados por :
+[20201214,14:28:40] INFO: Periodo : 01/04/2019 - 01/04/2019
+[20201214,14:33:09] INFO: Entrada como : [object Object]
+[20201214,14:33:09] INFO: Request Listando dados por :
+[20201214,14:33:09] INFO: Periodo : 01/04/2019 - 01/04/2019
+[20201214,14:36:06] INFO: Request na raiz
+[20201214,14:36:12] INFO: Request em todos os dados da base
+[20201214,14:37:59] INFO: Request na raiz
+[20201214,14:38:12] INFO: Entrada como : [object Object]
+[20201214,14:38:12] INFO: Request Listando dados por :
+[20201214,14:38:12] INFO: Periodo : 01/12/2020 - 04/12/2020
+[20201214,14:39:28] INFO: Entrada como : [object Object]
+[20201214,14:39:28] INFO: Request Listando dados por :
+[20201214,14:39:28] INFO: Periodo : 01/12/2020 - 01/12/2020
+[20201214,14:39:45] INFO: Entrada como : [object Object]
+[20201214,14:39:45] INFO: Request Listando dados por :
+[20201214,14:39:45] INFO: Periodo : 01/12/2020 - 01/12/2020
+[20201214,14:39:46] INFO: Entrada como : [object Object]
+[20201214,14:39:46] INFO: Request Listando dados por :
+[20201214,14:39:46] INFO: Periodo : 01/12/2020 - 01/12/2020
+[20201214,14:39:47] INFO: Entrada como : [object Object]
+[20201214,14:39:47] INFO: Request Listando dados por :
+[20201214,14:39:47] INFO: Periodo : 01/12/2020 - 01/12/2020
+[20201214,14:39:47] INFO: Entrada como : [object Object]
+[20201214,14:39:47] INFO: Request Listando dados por :
+[20201214,14:39:47] INFO: Periodo : 01/12/2020 - 01/12/2020
+[20201214,14:40:36] INFO: Entrada como : [object Object]
+[20201214,14:40:36] INFO: Request Listando dados por :
+[20201214,14:40:36] INFO: Periodo : 01/04/2019 - 04/04/2019
+[20201214,15:28:04] INFO: Request na raiz
+[20201214,15:28:37] INFO: Entrada como : [object Object]
+[20201214,15:28:37] INFO: Request Listando dados por :
+[20201214,15:28:37] INFO: Periodo : 01/04/2019 - 02/04/2019
+[20201214,15:29:58] INFO: Request em todos os dados da base
+[20201214,15:32:18] INFO: Entrada como : [object Object]
+[20201214,15:32:18] INFO: Request Listando dados por :
+[20201214,15:32:18] INFO: Periodo : 01/04/2019 - 02/04/2019
+[20201214,15:33:20] INFO: Entrada como : [object Object]
+[20201214,15:33:20] INFO: Request Listando dados por :
+[20201214,15:33:20] INFO: Periodo : 01/04/2019 - 02/04/2019
+[20201214,15:34:18] INFO: Entrada como : [object Object]
+[20201214,15:34:18] INFO: Request Listando dados por :
+[20201214,15:34:18] INFO: Periodo : 01/04/2019 - 01/04/2019
+[20201214,15:35:20] INFO: Entrada como : [object Object]
+[20201214,15:35:20] INFO: Request Listando dados por :
+[20201214,15:35:20] INFO: Periodo : 01/04/2019 - 01/04/2019
+[20201214,15:36:53] INFO: Entrada como : [object Object]
+[20201214,15:36:53] INFO: Request Listando dados por :
+[20201214,15:36:53] INFO: Periodo : 01/04/2019 - 01/04/2019
