@@ -67,6 +67,9 @@
         <div class="col-11 col-md-5 col-sm-10 transparent my-card">
           <chart-angular-gauge :data="dados.gauge"/>
         </div>
+        <!-- <div class="col-11 col-md-5 col-sm-10 transparent my-card" v-if="dados.coluna.estados">
+          <p>{{ this.dados.conula.estados }}</p>
+        </div> -->
       </div>
     </div>
   </q-page>
@@ -96,11 +99,11 @@ export default {
         horas: null,
         valores: null,
         coluna: {
-          estados: []
+          uf: [],
+          valor: [],
+          hora: []
         }
       },
-      tableData: [],
-      tableDataAll: [],
       loading: false,
       percentage: 0,
       click: 0
@@ -109,7 +112,7 @@ export default {
   created () {
   },
   mounted () {
-    // this.getListaToda()
+    this.getDados()
   },
   methods: {
     getDados () {
@@ -117,9 +120,11 @@ export default {
       this.click += 1
       if (this.click < 2) {
         if (this.dados.periodo.dataInicio === '') {
+          this.dados.temp = []
           this.loading = false
           this.getListaToda()
         } else {
+          this.dados.temp = []
           this.getLista()
           if (this.dados.temp) {
             this.loading = false
@@ -159,7 +164,7 @@ export default {
         // this.dados.valores = this.dados.valores + item.VALOR
         this.dados.horas = this.dados.horas + item.HORA
 
-        for (const estado of item.ESTADO) {
+        for (const estado of item.ESTADO.toUpperCase()) {
           for (const estados of this.dados.coluna.estados) {
             if (estados !== estado) {
               this.dados.coluna.estados.push(estado)
@@ -167,10 +172,15 @@ export default {
             }
           }
         }
+        // console.log(item.UF.toUpperCase())
       }
     }
     // getDinheiro (valor) {
-    //   var money =
+    //   for () {
+
+    //   }
+    //   const money = valor.value.replace(',', '.')
+    //   let formatMoney = parseFloat(money) * 100
     // }
   }
 }

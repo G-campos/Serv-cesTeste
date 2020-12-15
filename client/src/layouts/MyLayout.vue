@@ -23,18 +23,10 @@
           <q-list>
             <q-item clickable v-ripple @click="$router.push('/')">
               <q-item-section avatar>
-                <q-icon name="mdi-deathly-hallows" />
-              </q-item-section>
-              <q-item-section>
-                Home
-              </q-item-section>
-            </q-item>
-            <q-item clickable v-ripple @click="$router.push('/regiao')">
-              <q-item-section avatar>
                 <q-icon name="mdi-death-star-variant" />
               </q-item-section>
               <q-item-section>
-                Região
+                Home
               </q-item-section>
             </q-item>
           </q-list>
